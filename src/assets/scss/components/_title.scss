@@ -1,0 +1,20 @@
+.title {
+  @include desktop() {
+    @include font($primary-font, $fs-xxxl, $font-bold, $black);
+  }
+  @include font($primary-font, $fs-md, $font-bold, $black);
+  text-align: center;
+
+  &.-sub {
+    @include desktop() {
+      @include font($third-font, $fs-sm, $font-medium, $dark-gray);
+      line-height: 34px;
+    }
+    @include font($third-font, $fs-xxs, $font-medium, $dark-gray);
+    line-height: 24px;
+  }
+
+  &.-start {
+    text-align: start;
+  }
+}

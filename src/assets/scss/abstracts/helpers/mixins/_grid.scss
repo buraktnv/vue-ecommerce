@@ -1,0 +1,24 @@
+@mixin grid-container($columns, $gap: 10px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: $gap;
+}
+
+// Mixin for creating grid items with optional column and row spans
+@mixin grid-item(
+  $col-span: auto,
+  $row-span: auto,
+  $col-start: auto,
+  $row-start: auto
+) {
+  @if $col-span == auto {
+    $col-span: 1;
+  }
+
+  @if $row-span == auto {
+    $row-span: 1;
+  }
+
+  grid-column: $col-start / span $col-span;
+  grid-row: $row-start / span $row-span;
+}

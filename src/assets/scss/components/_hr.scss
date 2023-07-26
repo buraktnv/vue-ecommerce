@@ -1,0 +1,7 @@
+.hr {
+  border-top: 2px solid $black;
+  margin-bottom: 24px;
+  &.-dashed {
+    border-top: 2px dotted $black;
+  }
+}
