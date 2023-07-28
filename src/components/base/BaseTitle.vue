@@ -14,10 +14,6 @@ export default {
             default: "title"
         },
     },
-    data() {
-        return {
-        }
-    },
 }
 </script>
 
@@ -27,10 +23,6 @@ export default {
     font-weight: bold;
     position: relative;
     font-size: 34px;
-
-    &.-size {
-        font-size: 28px;
-    }
 
     &.-psuedo {
         &::before {
