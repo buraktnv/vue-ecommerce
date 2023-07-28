@@ -12,6 +12,8 @@
       font-style="normal"
       font-weight="400"
       line-height="normal"
+      icon="true"
+      :iconSrc="require('@/assets/icons/search.svg')"
     /> 
     -->
 
