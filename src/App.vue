@@ -5,17 +5,19 @@
       <router-link to="/about">About</router-link>
     </nav>
     <router-view />
-    <el-rate v-model="value1"></el-rate>
+    <base-text text="Hello world" :fontFamily="secondary" fontSize="16" />
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import BaseText from "./components/base/BaseText.vue";
 
 export default {
   name: "app",
   components: {
     HelloWorld,
+    BaseText,
   },
   data() {
     return {
