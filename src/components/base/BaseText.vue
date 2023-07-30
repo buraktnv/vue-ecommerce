@@ -35,6 +35,7 @@ export default {
     },
     fontWeight: {
       type: String,
+      default: "",
       validator: (value) => ["regular", "medium", "bold"].includes(value),
     },
   },
