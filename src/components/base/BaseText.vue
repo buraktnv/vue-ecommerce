@@ -13,9 +13,11 @@ export default {
     },
     fontSize: {
       type: String,
+      default: "16px",
       validator: (value) =>
         [
           "12px",
+          "16px",
           "14px",
           "20px",
           "24px",
@@ -31,12 +33,11 @@ export default {
     },
     lineHeight: {
       type: String,
-      default: "1.5",
     },
     fontWeight: {
       type: String,
-      default: "",
-      validator: (value) => ["regular", "medium", "bold"].includes(value),
+      validator: (value) =>
+        ["regular", "medium", "semibold", "bold"].includes(value),
     },
   },
 };

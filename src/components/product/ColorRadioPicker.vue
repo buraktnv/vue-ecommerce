@@ -1,6 +1,10 @@
 <template>
   <div class="color-radio-picker">
-    <el-radio-group v-model="radio">
+    <el-radio-group
+      :value="colorValue"
+      v-model="radio"
+      @input="$emit('color-radio', $event)"
+    >
       <el-radio
         :class="`-${color}`"
         :label="color"
@@ -13,10 +17,10 @@
 <script>
 export default {
   name: "ColorRadioPicker",
+  props: ["colors", "colorValue"],
   data() {
     return {
-      radio: "capeCod",
-      colors: ["capeCod", "paleSlate", "athensGray", "electricViolet"],
+      radio: this.colors[3],
     };
   },
 };
@@ -149,6 +153,7 @@ export default {
 
       height: 30px;
       &::after {
+        transition: none !important;
         width: 75%;
         height: 75%;
         background-color: rgb(245, 115, 115);

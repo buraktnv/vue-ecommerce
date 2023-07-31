@@ -1,7 +1,10 @@
 <template>
   <div class="home">
-    <base-text text="Hello world" fontFamily="secondary" fontSize="24" />
-    <color-radio-picker />
+    <color-radio-picker
+      :colors="colors"
+      @color-radio="updateColor"
+      v-model="colorValue"
+    />
   </div>
 </template>
 
@@ -15,6 +18,25 @@ export default {
   components: {
     BaseText,
     ColorRadioPicker,
+  },
+  data() {
+    return {
+      colorValue: "capeCod",
+      colors: [
+        "athensGray",
+        "capeCod",
+        "carissma",
+        "electricViolet",
+        "empress",
+        "merlot",
+        "ronchi",
+      ],
+    };
+  },
+  methods: {
+    updateColor(value) {
+      this.colorValue = value;
+    },
   },
 };
 </script>
