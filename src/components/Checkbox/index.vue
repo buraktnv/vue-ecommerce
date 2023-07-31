@@ -22,15 +22,13 @@ export default {
         handleChange(e) {
             this.isChecked = e.target.checked;
             this.$emit("input", this.isChecked);
-            console.log(this.isChecked);
         }
     }
 }
 </script>
 
-<style lang="scss" scoped>
-
-.checkbox{
+<style lang="scss">
+.checkbox {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -38,6 +36,11 @@ export default {
     cursor: pointer;
     font-size: 18px;
     color: $empress;
+
+    &__label a {
+        color: $empress;
+        text-decoration-color: $empress;
+    }
 
     & .checkmark::after {
         left: 7px;
@@ -57,7 +60,7 @@ export default {
         height: 0;
         width: 0;
 
-        &:checked ~ .checkmark {
+        &:checked~.checkmark {
             background-color: $capeCod;
 
             &::after {
@@ -67,7 +70,7 @@ export default {
     }
 }
 
-.checkmark{
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -80,10 +83,5 @@ export default {
         position: absolute;
         display: none;
     }
-}
-
-.checkbox__label > a{
-    text-decoration: underline;
-    text-decoration-color: $empress;
 }
 </style>
