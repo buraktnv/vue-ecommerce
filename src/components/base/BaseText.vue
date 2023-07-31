@@ -1,5 +1,12 @@
 <template>
-  <p :class="['text', `-fs${fontSize}`, `-${fontFamily}`, `-${fontWeight}`]">
+  <p
+    :class="[
+      'text',
+      !!fontSize ? `-fs${fontSize}` : '',
+      !!fontFamily && `-${fontFamily}`,
+      !!fontWeight && `-${fontWeight}`,
+    ]"
+  >
     {{ text }}
   </p>
 </template>
@@ -14,28 +21,19 @@ export default {
     fontSize: {
       type: String,
       validator: (value) =>
-        [
-          "12px",
-          "14px",
-          "20px",
-          "24px",
-          "32px",
-          "40px",
-          "48px",
-          "56px",
-        ].includes(value),
+        ["12", "16", "14", "20", "24", "32", "40", "48", "56"].includes(value),
     },
     fontFamily: {
       type: String,
-      validator: (value) => ["secondary"].includes(value),
+      validator: (value) => ["primary", "secondary"].includes(value),
     },
     lineHeight: {
       type: String,
-      default: "1.5",
     },
     fontWeight: {
       type: String,
-      validator: (value) => ["regular", "medium", "bold"].includes(value),
+      validator: (value) =>
+        ["regular", "medium", "semibold", "bold"].includes(value),
     },
   },
 };

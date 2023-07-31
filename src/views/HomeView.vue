@@ -1,19 +1,44 @@
 <template>
   <div class="home">
-    <base-text text="Hello world" fontFamily="secondary" fontSize="24" />
+    <color-radio-picker
+      :colors="colors"
+      @color-radio="updateColor"
+      v-model="colorValue"
+    />
+
+    <base-text text="hello world!" font-family="secondary" />
   </div>
 </template>
 
 <script>
 import BaseText from "@/components/base/BaseText.vue";
+import ColorRadioPicker from "@/components/product/ColorRadioPicker.vue";
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
     BaseText,
+    ColorRadioPicker,
+  },
+  data() {
+    return {
+      colorValue: "capeCod",
+      colors: [
+        "athensGray",
+        "capeCod",
+        "carissma",
+        "electricViolet",
+        "empress",
+        "merlot",
+        "ronchi",
+      ],
+    };
+  },
+  methods: {
+    updateColor(value) {
+      this.colorValue = value;
+    },
   },
 };
 </script>
