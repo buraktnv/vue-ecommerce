@@ -5,6 +5,8 @@
       @color-radio="updateColor"
       v-model="colorValue"
     />
+
+    <base-text text="hello world!" font-family="secondary" />
   </div>
 </template>
 
