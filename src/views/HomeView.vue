@@ -1,12 +1,6 @@
 <template>
   <div class="home">
-    <color-radio-picker
-      :colors="colors"
-      @color-radio="updateColor"
-      v-model="colorValue"
-    />
-
-    <base-text text="hello world!" font-family="secondary" />
+    <DiscountCard :backgroundImage="imgURL" :subtitle="subtitle" :title="title" :discount="discount" :explore="explore"></DiscountCard>
   </div>
 </template>
 
@@ -14,12 +8,14 @@
 import BaseText from "@/components/base/BaseText.vue";
 import ColorRadioPicker from "@/components/product/ColorRadioPicker.vue";
 // @ is an alias to /src
+import DiscountCard from "@/components/DiscountCard";
 
 export default {
   name: "HomeView",
   components: {
     BaseText,
     ColorRadioPicker,
+    DiscountCard,
   },
   data() {
     return {
@@ -33,6 +29,10 @@ export default {
         "merlot",
         "ronchi",
       ],
+      subtitle: "Low Price",
+      title: "High Coziness",
+      discount: "UPTO 50% OFF",
+      explore: "Explore Items",
     };
   },
   methods: {
