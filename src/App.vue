@@ -4,7 +4,6 @@
       <TheHeader />
     </nav>
     <router-view />
-    <base-text text="Hello world" :fontFamily="secondary" fontSize="16" />
   </div>
 </template>
 
