@@ -1,13 +1,12 @@
 <template>
   <div class="home">
-    <DiscountCard :backgroundImage="imgURL" :subtitle="subtitle" :title="title" :discount="discount" :explore="explore"></DiscountCard>
+    <DiscountCard :imgURL="imgURL" :subtitle="subtitle" :title="title" :discount="discount" :explore="explore"></DiscountCard>
   </div>
 </template>
 
 <script>
 import BaseText from "@/components/base/BaseText.vue";
 import ColorRadioPicker from "@/components/product/ColorRadioPicker.vue";
-// @ is an alias to /src
 import DiscountCard from "@/components/DiscountCard";
 
 export default {
@@ -29,6 +28,7 @@ export default {
         "merlot",
         "ronchi",
       ],
+      imgURL: "@/assets/images/purple-bg.jpg",
       subtitle: "Low Price",
       title: "High Coziness",
       discount: "UPTO 50% OFF",

@@ -1,9 +1,10 @@
 <template>
-    <div class="discount" :style="{ backgroundImage: 'url('+ backgroundImage +')'}">
-        <base-text>{{ subtitle }}</base-text>
+    <div class="discount">
+        <img :src="imgURL" alt="backgroung-image">
+        <base-text :text="subtitle"></base-text>
         <base-title>{{ title }}</base-title>
-        <base-text>{{ discount }}</base-text>
-        <base-text>{{ explore }}</base-text> <!-- make hyperlink component ? -->
+        <base-text :text="discount"></base-text>
+        <base-text :text="explore"></base-text>
     </div>
 </template>
 
@@ -12,10 +13,10 @@ import BaseText from '../base/BaseText.vue';
 import BaseTitle from '../base/BaseTitle.vue';
 
 export default {
-  components: { BaseText, BaseTitle },
+    components: { BaseText, BaseTitle },
     name: "DiscountCard",
-    props:{
-        backgroundImage: String,
+    props: {
+        imgURL: { type: String, required: true},
         subtitle: String,
         title: String,
         discount: String,
@@ -29,6 +30,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
