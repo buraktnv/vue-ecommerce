@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <TheHeader />
     </nav>
     <router-view />
     <base-text text="Hello world" :fontFamily="secondary" fontSize="16" />
@@ -10,6 +9,7 @@
 </template>
 
 <script>
+import TheHeader from "@/components/theHeader";
 import HelloWorld from "./components/HelloWorld.vue";
 import BaseText from "./components/base/BaseText.vue";
 
@@ -18,6 +18,7 @@ export default {
   components: {
     HelloWorld,
     BaseText,
+    TheHeader,
   },
   data() {
     return {
