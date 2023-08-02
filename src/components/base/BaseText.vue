@@ -88,5 +88,6 @@ export default {
   &.-fs56 {
     font-size: 56px;
   }
+
 }
 </style>
