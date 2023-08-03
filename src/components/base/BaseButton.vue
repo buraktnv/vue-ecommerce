@@ -24,7 +24,12 @@ export default {
         color: {
             type: String,
             validator: (value) =>
-                ["white", "electricViolet", "capeCod", "empress"].includes(value),
+                ["clr-white", "clr-electricViolet", "clr-capeCod", "clr-empress"].includes(value),
+        },
+        background: {
+            type: String,
+            validator: (value) =>
+                ["bg-white", "bg-electricViolet", "bg-wildSand", "bg-transparent"].includes(value),
         },
     },
     computed: {
@@ -34,6 +39,7 @@ export default {
                 this.type && `-${this.type}`,
                 this.size && `-${this.size}`,
                 this.color && `-${this.color}`,
+                this.background && `-${this.background}`,
                 this.bord && `-${this.bord}`,
             ];
         },
@@ -43,10 +49,10 @@ export default {
 
 <style lang="scss" scoped>
 $colors: (
-    "white": $white,
-    "electricViolet": $electricViolet,
-    "capeCod": $capeCod,
-    "empress": $empress,
+    "clr-white": $white,
+    "clr-electricViolet": $electricViolet,
+    "clr-capeCod": $capeCod,
+    "clr-empress": $empress,
 );
 
 $paddings: (
@@ -61,10 +67,10 @@ $paddings: (
 );
 
 $bg-colors: (
-    "electricViolet": $electricViolet,
-    "white": $white,
-    "wildSand": $wildSand,
-    "transparent": transparent,
+    "bg-electricViolet": $electricViolet,
+    "bg-white": $white,
+    "bg-wildSand": $wildSand,
+    "bg-transparent": transparent,
 );
 
 $borders: (
@@ -114,9 +120,9 @@ $borders: (
     }
 
     @each $name,
-    $bgColor in $bg-colors {
+    $background in $bg-colors {
         &.-#{$name} {
-            background: $bgColor;
+            background: $background;
         }
     }
 }

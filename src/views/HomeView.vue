@@ -8,8 +8,8 @@
 
     <base-text text="hello world!" font-family="secondary" />
     <base-title typical=" -psuedo -fsmall">Base title!</base-title>
-    <base-button type="primary" size="xxl">Merhaba</base-button>
-    <base-button type="secondary" size="lg" bord="none">Deneme</base-button>
+    <base-button type="primary" size="xxl" background="bg-white" color="clr-empress">Merhaba</base-button>
+    <base-button type="secondary" size="lg" >Deneme</base-button>
     
     
   </div>
@@ -29,7 +29,7 @@ export default {
     BaseText,
     ColorRadioPicker,
     BaseTitle,
-    BaseButton
+    BaseButton,
     OrderInfo
   },
   data() {
