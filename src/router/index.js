@@ -25,6 +25,12 @@ const routes = [
     name: "swiper",
     component: SwiperView,
   },
+  {
+    path: "/order",
+    name: "order",
+    component: () =>
+      import("../views/OrdersView.vue"),
+  },
 ];
 
 const router = new VueRouter({
