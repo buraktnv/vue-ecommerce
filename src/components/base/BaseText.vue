@@ -1,7 +1,13 @@
 <template>
   <p
     class="text"
-    :class="[getFontSize, getFontFamily, getFontWeight, getColor]"
+    :class="[
+      getFontSize,
+      getFontFamily,
+      getFontWeight,
+      getColor,
+      getLineHeight,
+    ]"
   >
     {{ text }}
   </p>
@@ -29,11 +35,25 @@ export default {
     },
     lineHeight: {
       type: String,
+      validator: (value) =>
+        [
+          "lh10",
+          "lh11",
+          "lh12",
+          "lh13",
+          "lh14",
+          "lh15",
+          "lh16",
+          "lh17",
+          "lh18",
+          "lh19",
+          "lh20",
+        ].includes(value),
     },
     fontWeight: {
       type: String,
       validator: (value) =>
-        ["regular", "medium", "semibold", "bold"].includes(value),
+        ["regular", "medium", "semibold", "bold", "heavy"].includes(value),
     },
     color: {
       type: String,
@@ -65,6 +85,9 @@ export default {
     },
     getColor() {
       return this.color && `-${this.color}`;
+    },
+    getLineHeight() {
+      return this.lineHeight && `-${this.lineHeight}`;
     },
   },
 };
@@ -98,6 +121,28 @@ $font-sizes: (
   "fs56": 56px,
   "fs78": 78px,
 );
+
+$line-heights: (
+  "lh10": 1,
+  "lh11": 1.1,
+  "lh12": 1.2,
+  "lh13": 1.3,
+  "lh14": 1.4,
+  "lh15": 1.5,
+  "lh16": 1.6,
+  "lh17": 1.7,
+  "lh18": 1.8,
+  "lh19": 1.9,
+  "lh20": 2,
+);
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "heavy": 800,
+);
 .text {
   font-family: $primary-font;
   font-weight: $font-semibold;
@@ -106,29 +151,33 @@ $font-sizes: (
   /* Default Font Size */
   font-size: 16px;
 
-  /* colors */
+  /* Font Families */
+  &.-secondary {
+    font-family: $secondary-font;
+  }
 
+  /* Font Colors */
   @each $name, $color in $colors {
     &.-#{$name} {
       color: $color;
     }
   }
 
-  /* Secondary Font Family Styles */
-  &.-secondary {
-    font-family: $secondary-font;
-    font-weight: $font-bold;
+  /* Line Heights */
+  @each $name, $height in $line-heights {
+    &.-#{$name} {
+      line-height: $height;
+    }
   }
 
-  &.-regular {
-    font-weight: $font-regular;
+  /* Font Weights */
+  @each $name, $weight in $font-weights {
+    &.-#{$name} {
+      font-weight: $weight;
+    }
   }
 
-  &.-medium {
-    font-weight: $font-medium;
-  }
-
-  /* Font Size Options */
+  /* Font Sizes */
   @each $name, $size in $font-sizes {
     &.-#{$name} {
       font-size: $size;

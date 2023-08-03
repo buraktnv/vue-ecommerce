@@ -15,6 +15,7 @@
               color="white"
               :text="caroselItem.adTitle"
               font-weight="bold"
+              line-height="lh12"
               font-size="78"
             />
             <base-text
