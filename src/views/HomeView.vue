@@ -7,12 +7,19 @@
     />
 
     <base-text text="hello world!" font-family="secondary" />
+    <base-title typical=" -psuedo -fsmall">Base title!</base-title>
+    <base-button type="primary" size="xxl">Merhaba</base-button>
+    <base-button type="secondary" size="lg" bord="none">Deneme</base-button>
+    
+    
   </div>
 </template>
 
 <script>
 import BaseText from "@/components/base/BaseText.vue";
 import ColorRadioPicker from "@/components/product/ColorRadioPicker.vue";
+import BaseTitle from '@/components/base/BaseTitle.vue';
+import BaseButton from "@/components/base/BaseButton.vue";
 // @ is an alias to /src
 
 export default {
@@ -20,6 +27,8 @@ export default {
   components: {
     BaseText,
     ColorRadioPicker,
+    BaseTitle,
+    BaseButton
   },
   data() {
     return {

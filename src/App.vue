@@ -9,13 +9,11 @@
 
 <script>
 import TheHeader from "@/components/theHeader";
-import HelloWorld from "./components/HelloWorld.vue";
 import BaseText from "./components/base/BaseText.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld,
     BaseText,
     TheHeader,
   },
