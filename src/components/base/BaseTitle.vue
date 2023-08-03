@@ -1,5 +1,5 @@
 <template>
-    <p :class="typical">
+    <p class="title" :class="[typical]">
         <slot></slot>
     </p>
 </template>
@@ -20,11 +20,12 @@ export default {
 <style lang="scss" scoped>
 .title {
     font-family: $secondary-font;
-    font-weight: bold;
+    font-weight: $font-bold;
     position: relative;
-    font-size: 34px;
+    font-size: $fs-xl;
 
     &.-psuedo {
+        margin-left: 15px;
         &::before {
             position: absolute;
             content: "";
@@ -38,7 +39,7 @@ export default {
     }
 
     &.-fsmall{
-        font-size: 28px;
+        font-size: $fs-lg;
     }
 }
 </style>
