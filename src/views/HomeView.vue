@@ -20,6 +20,7 @@ import BaseText from "@/components/base/BaseText.vue";
 import ColorRadioPicker from "@/components/product/ColorRadioPicker.vue";
 import BaseTitle from '@/components/base/BaseTitle.vue';
 import BaseButton from "@/components/base/BaseButton.vue";
+import OrderInfo from "@/components/order/OrderInfo.vue";
 // @ is an alias to /src
 
 export default {
@@ -29,6 +30,7 @@ export default {
     ColorRadioPicker,
     BaseTitle,
     BaseButton
+    OrderInfo
   },
   data() {
     return {
