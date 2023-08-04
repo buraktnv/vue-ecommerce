@@ -71,10 +71,6 @@ export default {
 </style>
 
 <style lang="scss">
-.el-carousel__container {
-  height: 720px !important;
-}
-
 .el-carousel__indicator--horizontal {
   padding: 12px 1px !important;
 
