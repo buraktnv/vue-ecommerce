@@ -1,6 +1,13 @@
 <template>
   <div class="card-swiper">
-    <el-carousel :interval="5000" arrow="never">
+    <el-carousel
+      :interval="5000"
+      :arrow="arrow"
+      trigger="click"
+      height="300px"
+      :height="height"
+      :indicator-position="indicatorPosition"
+    >
       <slot />
     </el-carousel>
   </div>
@@ -14,15 +21,25 @@ export default {
     BaseText,
     FeedbackCard,
   },
+  props: {
+    height: {
+      type: String,
+      default: "300px",
+    },
+    arrow: {
+      type: String,
+      default: "arrow",
+    },
+    indicatorPosition: {
+      type: String,
+      default: "outside",
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .card-swiper {
-  .el-carousel__container {
-    height: 400px !important;
-  }
-
   .el-carousel__indicator--horizontal {
     padding: 12px 5px !important;
 

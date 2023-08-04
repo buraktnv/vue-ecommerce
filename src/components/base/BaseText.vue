@@ -25,9 +25,19 @@ export default {
       type: String,
       required: false,
       validator: (value) =>
-        ["12", "16", "14", "20", "24", "32", "40", "48", "56", "78"].includes(
-          value
-        ),
+        [
+          "12",
+          "14",
+          "16",
+          "18",
+          "20",
+          "24",
+          "32",
+          "40",
+          "48",
+          "56",
+          "78",
+        ].includes(value),
     },
     fontFamily: {
       type: String,
@@ -70,6 +80,7 @@ export default {
           "ronchi",
           "carissma",
           "merlot",
+          "gray",
         ].includes(value),
     },
   },
@@ -107,12 +118,14 @@ $colors: (
   "ronchi": $ronchi,
   "carissma": $carissma,
   "merlot": $merlot,
+  "gray": $gray,
 );
 
 $font-sizes: (
   "fs12": 12px,
   "fs14": 14px,
   "fs16": 16px,
+  "fs18": 18px,
   "fs20": 20px,
   "fs24": 24px,
   "fs32": 32px,
