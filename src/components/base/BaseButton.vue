@@ -11,6 +11,7 @@ export default {
         type: {
             type: String,
             validator: (value) => ["primary", "secondary"].includes(value),
+            required: true,
         },
         size: {
             type: String,
