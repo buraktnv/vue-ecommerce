@@ -31,6 +31,18 @@ const routes = [
     component: () =>
       import("../views/OrdersView.vue"),
   },
+  {
+    path: "/wishlist",
+    name: "wishlist",
+    component: () =>
+      import("../views/WishlistView.vue"),
+  },
+  {
+    path: "/order-detail",
+    name: "order-detail",
+    component: () =>
+      import("../views/OrderDetailView.vue"),
+  },
 ];
 
 const router = new VueRouter({

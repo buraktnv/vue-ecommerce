@@ -39,7 +39,6 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-    margin: 30px 25%;
     border-radius: 8px;
     background: $wildSand;
     padding: 28px 47px;
@@ -47,6 +46,7 @@ export default {
     flex-direction: column;
     gap: 14px;
     font-family: $secondary-font;
+    margin-bottom: 30px;
 
     .title {
         font-size: $fs-sm;
@@ -57,7 +57,7 @@ export default {
     &-info {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: $sp-sm;
 
         .row {
             display: flex;
