@@ -8,7 +8,7 @@
             <p class="info">{{ quantityText }} : <span>{{ detail.quantity }}</span></p>
             <p class="price"><span>${{ detail.total }}</span></p>
             <div v-if="!isDetail" class="button-container">
-                <base-button class="button" type="primary" size="md">{{ buttonText }}</base-button>
+                <base-button type="primary" size="md">{{ buttonText }}</base-button>
             </div>
             <div v-if="isDetail" class="icon-container">
                 <img class="close-icon" src="@/assets/icons/close-icon.svg" alt="close icon">
