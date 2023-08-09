@@ -6,9 +6,8 @@
         <base-text font-size="18" :text="cardDetail.title" />
         <base-text font-size="14" color="gray" :text="cardDetail.subTitle" />
       </div>
-      <button class="card__button">
+      <button class="card__button" v-if="typeof cardDetail.money === 'number'">
         <base-text
-          v-if="typeof cardDetail.money === 'number'"
           font-size="14"
           font-weight="bold"
           :text="`$` + cardDetail.money.toFixed(2)"
@@ -65,19 +64,7 @@ export default {
   components: {
     BaseText,
   },
-  props: ["cardDetails"],
-  data() {
-    return {
-      cardDetail: {
-        img: "https://s3-alpha-sig.figma.com/img/ac5f/e2dd/10de37f6691ba79a3bff6e3d1634a475?Expires=1691971200&Signature=SPyRefBKjvZ7rlYzfHZk32oj3Ney-etU9jwkN3bCVoYFsdtexHp~PdCbBl21o~YG6ZwDjCg-DLDX3NegZdPAuU6-zzLvHcpXA7ps-oFfBJrjFgdfBX5WwQ89e7~dtoSseBT7-du9AkN3ioqbE4jwc6dGFWsI5Heg-v5DL4HvJ9Hy3czzsedflIGIBILZL~QrRtMi6Pvqjx31Nr9cxBNdRjdEroPfr954uQtVVwJq5Xag5jfpwH~Yoaq2Byq054clRc1D26AWIYMiRK9hqdvj3kdHnrziK4~ybwTAw1crm2MMNmh8vamzGGP9~2xGfzm-gErpV1aII5t0HC9qt78WLQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
-        title: "Shirts",
-        subTitle: "Explore Now",
-        goToWithLink: "#",
-        money: 12.0,
-        favorite: false,
-      },
-    };
-  },
+  props: ["cardDetail"],
 };
 </script>
 <style lang="scss" scoped>
