@@ -7,6 +7,7 @@
       height="300px"
       :height="height"
       :indicator-position="indicatorPosition"
+      :style="{ padding: padding }"
     >
       <slot />
     </el-carousel>
@@ -34,6 +35,9 @@ export default {
       type: String,
       default: "outside",
     },
+    padding: {
+      type: String,
+    },
   },
 };
 </script>
@@ -49,6 +53,22 @@ export default {
       width: 10px !important;
       border-radius: 32px;
     }
+  }
+
+  [class*=" el-icon-"],
+  [class^="el-icon-"] {
+    color: $capeCod;
+    font-weight: 700 !important;
+  }
+
+  .el-carousel__arrow--left {
+    left: -10px !important;
+    top: 40%;
+  }
+
+  .el-carousel__arrow--right {
+    right: -10px !important;
+    top: 40%;
   }
 }
 </style>
